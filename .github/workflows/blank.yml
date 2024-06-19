@@ -6,19 +6,47 @@ on:
   workflow_dispatch:
 
 jobs:
+  setup:
+    name: setup
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
+      - name: cache node modules
+        id: cache-node-modules
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+      - name: install dpendencies
+        run: npm ci --ignore-scripts
+
   build:
+    name: build
+    runs-on: ubuntu-20.04
+    needs: setup
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v3
+      - name: restore node modules
+        id: cache-node-modules
+        uses: actions/cache@v4
+        with:
+          path: node_modules
+          key: ${{ runner.os }}-${{ hashFiles('package-lock.json') }}
+      - name: check build
+        run: npm run build
+
+  action:
     runs-on: ubuntu-latest
     steps:
-      - run: |
-          mkdir data
-          echo "<h1>Hello GitHub Pages!</h1>" > data/index.html          
       - uses: actions/upload-artifact@v3
         with:
           name: my_site
-          path: data
+          path: dist
       - uses: actions/upload-pages-artifact@v1
         with:
-          path: data
+          path: dist
           
   deploy:
     needs: build
