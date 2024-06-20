@@ -16,9 +16,12 @@ module.exports = {
   endOfLine: "lf", // 改行の文字コードを指定
   embeddedLanguageFormatting: "auto", // Prettierがファイルに埋め込まれた引用コードをフォーマットするかどうかを制御
 
+
   // parser: "none", // ref https://qiita.com/takeshisakuma/items/bbb2cd2f1c65de70e363#parser
   // filepath: "none",
 
+  // decoratorsでエラーが出るため追記
+  importOrderParserPlugins: ["typescript", "decorators-legacy"],
   // import order
   importOrder: [
     "^(react/(.*)$)|^(react$)",
