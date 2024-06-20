@@ -21,12 +21,16 @@ jobs:
       - name: install dpendencies
         run: npm ci --ignore-scripts
   lint:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
+    needs: setup
     steps:
       - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
+      - name: restore node modules
+        id: cache-node-modules
+        uses: actions/cache@v4
         with:
-          node-version: 12.x
+          path: node_modules
+          key: ${{ runner.os }}-${{ hashFiles('package-lock.json') }}
       - name: Run Prettier
         run: npm run fix:js
       - uses: stefanzweifel/git-auto-commit-action@v3.0.0
