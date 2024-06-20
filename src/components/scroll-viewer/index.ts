@@ -1,15 +1,15 @@
-import { LitElement, css, html } from "lit";
+import { css, html, LitElement } from "lit";
 import { customElement } from "lit/decorators";
 
-@customElement('scroll-viewer')
+@customElement("scroll-viewer")
 export class ScrollViewer extends LitElement {
   protected render() {
     return html`
-<div>
-  scroll-viewer
-  <slot></slot>
-</div>
-    `
+      <div>
+        scroll-viewer
+        <slot></slot>
+      </div>
+    `;
   }
 
   static styles = css`
@@ -19,5 +19,5 @@ export class ScrollViewer extends LitElement {
       padding: 2rem;
       text-align: center;
     }
-`
+  `;
 }

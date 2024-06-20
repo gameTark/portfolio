@@ -1,20 +1,19 @@
-
-import { LitElement, css, html } from "lit";
+import { css, html, LitElement } from "lit";
 import { customElement } from "lit/decorators";
 
-@customElement('horizontal-navigation')
+@customElement("horizontal-navigation")
 export class HorizontalNavigation extends LitElement {
   protected render() {
     return html`
-<div class="wrap">
-  <nav class="header">
-    <slot name="navigation"></slot>
-  </nav>
-  <div class="body">
-    <slot name="body"></slot>
-  </div>
-</div>
-`
+      <div class="wrap">
+        <nav class="header">
+          <slot name="navigation"></slot>
+        </nav>
+        <div class="body">
+          <slot name="body"></slot>
+        </div>
+      </div>
+    `;
   }
 
   static styles = css`
@@ -25,5 +24,5 @@ export class HorizontalNavigation extends LitElement {
     .wrap {
       display: flex;
     }
-`
+  `;
 }
