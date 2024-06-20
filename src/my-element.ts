@@ -1,14 +1,15 @@
-import { LitElement, css, html } from 'lit'
-import { customElement, property } from 'lit/decorators.js'
-import litLogo from './assets/logos/lit.svg'
+import { css, html, LitElement } from "lit";
+import { customElement, property } from "lit/decorators.js";
 
-@customElement('my-element')
+import litLogo from "./assets/logos/lit.svg";
+
+@customElement("my-element")
 export class MyElement extends LitElement {
   @property()
-  docsHint = 'Click on the Vite and Lit logos to learn more'
+  docsHint = "Click on the Vite and Lit logos to learn more";
 
   @property({ type: Number })
-  count = 0
+  count = 0;
 
   render() {
     return html`
@@ -19,16 +20,14 @@ export class MyElement extends LitElement {
       </div>
       <slot></slot>
       <div class="card">
-        <button @click=${this._onClick} part="button">
-          count is ${this.count}
-        </button>
+        <button @click=${this._onClick} part="button">count is ${this.count}</button>
       </div>
       <p class="read-the-docs">${this.docsHint}</p>
-    `
+    `;
   }
 
   private _onClick() {
-    this.count++
+    this.count++;
   }
 
   static styles = css`
@@ -101,5 +100,5 @@ export class MyElement extends LitElement {
         background-color: #f9f9f9;
       }
     }
-  `
+  `;
 }
