@@ -7,23 +7,72 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Vite + Lit + TS</title>
   <link rel="stylesheet" href="./src/index.css" />
-  <script type="module" src="/src/index.ts"></script>
-
+  <script src="https://flackr.github.io/scroll-timeline/dist/scroll-timeline.js"></script>
+  <script type="module" src="./src/index.ts" defer></script>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+Antique&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho&display=swap" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
 </head>
 
 <body>
   <horizontal-navigation>
-    <my-element slot="navigation">
-      <h1>Vite + Lit</h1>
-    </my-element>
-    <scroll-viewer slot="body">
-      hoge
-    </scroll-viewer>
+    <div slot="navigation">
+      <navigation-item name="トップ" href="https://google.co.jp"></navigation-item>
+    </div>
+    <div slot="navigation">
+      <navigation-item name="活動履歴" href="https://google.co.jp"></navigation-item>
+    </div>
+    <div slot="navigation">
+      <navigation-item name="プロフィール" href="https://google.co.jp"></navigation-item>
+    </div>
+    <div slot="navigation">
+      <navigation-item name="バー" href="https://google.co.jp"></navigation-item>
+    </div>
+
+    <div slot="body">
+      <h2 class="font-serif">
+        Profile
+      </h2>
+      <h2 class="font-sans">
+        プロフィール
+      </h2>
+      <p class="font-serif">
+        ターク
+      </p>
+      <p class="font-serif">
+        TARK
+      </p>
+      <p class="font-sans">
+        Web Desiginer / Application Engineer
+      </p>
+      <p class="font-serif">
+        配信サイトTwitchで配信活動を行っているストリーマー。
+        <br />
+        ウェブのデザイン、アプリケーションの設計を主にした。
+        <br />
+        専門学校を卒業後、フロントエンドエンジニアとして数社を転々とし、フリーランスのエンジニアとして活動中。
+        <br />
+        デザインとユーザビリティを両立させたリッチで「軽くて早い」ウェブ製作を得意としている。
+      </p>
+      <p class="font-serif">
+        React Vue Electronを主に使用し、デスクトップアプリケーションを製作することを得意としております。
+      </p>
+      <p class="font-serif">
+        最近はSpineを使用し、キャラクターを動かしたり、
+        <br />
+        Godotを使ってゲームを製作したり、
+        <br />
+        TouchDesiginerでエフェクトを製作することに夢中です。
+      </p>
+      
+    </div>
   </horizontal-navigation>
 </body>
 

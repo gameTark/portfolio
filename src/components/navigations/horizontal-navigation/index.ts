@@ -1,6 +1,6 @@
 
 import { LitElement, css, html } from "lit";
-import { customElement } from "lit/decorators";
+import { customElement } from "lit/decorators.js";
 
 @customElement('horizontal-navigation')
 export class HorizontalNavigation extends LitElement {
@@ -16,7 +16,6 @@ export class HorizontalNavigation extends LitElement {
 </div>
 `
   }
-
   static styles = css`
     :host {
       margin: 0;
@@ -24,6 +23,11 @@ export class HorizontalNavigation extends LitElement {
     }
     .wrap {
       display: flex;
+      flex-direction: column;
+    }
+    .header {
+      display: flex;
+      gap: 20px;
     }
 `
 }
