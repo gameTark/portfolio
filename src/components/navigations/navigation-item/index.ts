@@ -1,23 +1,19 @@
-import { LitElement, css, html } from "lit";
+import { css, html, LitElement } from "lit";
 import { customElement, property } from "lit/decorators.js";
 
-@customElement('navigation-item')
+@customElement("navigation-item")
 export class NavigationItem extends LitElement {
   @property({ type: String })
-  name: string = '';
+  name: string = "";
 
   @property({ type: String })
-  href: string = '';
+  href: string = "";
 
   @property({ type: String })
-  target: string = '';
+  target: string = "";
 
   protected render() {
-    return html`
-      <a href=${this.href} target=${this.target}>
-        ${this.name}
-      </a>
-`;
+    return html` <a href=${this.href} target=${this.target}> ${this.name} </a> `;
   }
 
   static styles = css`
@@ -31,5 +27,5 @@ export class NavigationItem extends LitElement {
       display: inline-block;
       text-decoration: none;
     }
-`
+  `;
 }
