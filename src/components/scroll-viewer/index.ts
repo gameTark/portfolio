@@ -1,5 +1,5 @@
 import { css, html, LitElement } from "lit";
-import { customElement } from "lit/decorators";
+import { customElement } from "lit/decorators.js";
 
 @customElement("scroll-viewer")
 export class ScrollViewer extends LitElement {
@@ -16,7 +16,6 @@ export class ScrollViewer extends LitElement {
     :host {
       max-width: 1280px;
       margin: 0 auto;
-      padding: 2rem;
       text-align: center;
     }
   `;
